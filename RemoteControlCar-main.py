@@ -3,8 +3,23 @@ from microbit import *
 import radio
 
 radio.on()
+radio.config(group=0)
 
-# Code in a 'while True:' loop repeats forever
+## Enums
+CarPins = {}
+CarPins["LeftBackWheel"] = pin3
+CarPins["RightBackWheel"] = pin4
+CarPins["LeftFrontWheel"] = pin1
+CarPins["RightFrontWheel"] = pin2
+
+RadioSignals = {}
+RadioSignals["DriveForward"] = 1
+RadioSignals["DriveBackwards"] = 2
+RadioSignals["TurnLeft"] = 3
+RadioSignals["TurnRight"] = 4
+RadioSignals["StopMovement"] = 0
+
+
 class Controller():
     
     def mainloop():
@@ -44,5 +59,4 @@ while True:
             NewCar.mainloop()
 
     sleep(10)
-            
             
